@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Geovanni.Biblioteca.MVC.Models.Prestamo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Prestamos</h2>
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Carrera</th>
+            <th>Fecha Prestamo</th>
+            <th>Fecha Devolucion</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.idLector
+                </td>
+                <td>
+                    @item.nombre
+                </td>
+                <td>
+                    @item.carrera
+                </td>
+                <td>
+                    @item.fechaPrestamo
+                </td>
+                <td>
+                    @item.fechaPrestamo
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<input type='button' value='Nuevo Prestamo' onclick='window.location = "@Url.Action("NuevoPrestamo", "Prestamos")";' />
+
